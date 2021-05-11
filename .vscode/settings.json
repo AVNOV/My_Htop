@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "memory": "cpp"
+        "memory": "cpp",
+        "iomanip": "cpp",
+        "iostream": "cpp"
     }
 }
