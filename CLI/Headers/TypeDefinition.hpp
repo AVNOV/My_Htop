@@ -1,12 +1,11 @@
 /*
-** EPITECH PROJECT, 2019
-** cpp_rush3_2019
-** File description:
-** TypeDefinition.hpp
+** HTOP SOFTWARE YNOV PROJECT, 2021
+** Made by : arthur.viard@ynov.com && lucas.richard@ynov.com
+** File description : NetworkModule sources
 */
 
 #ifndef TYPEDEFINITION_HPP_
-#define TYPEDEFINITION_HPP_
+ #define TYPEDEFINITION_HPP_
 
 #include <string>
 #include <unordered_map>
@@ -22,7 +21,6 @@ namespace Type {
         UNKNOWN
     } Module;
     using core_data_t = std::unordered_map<std::string, std::string>;
-    // using core_clocked_data_t = std::vector<CoreClo>;
     using cpu_t = std::unordered_map<std::string, std::string>;
 }
 

@@ -11,9 +11,9 @@
 #include "CoreClockedModule.hpp"
 
 class NetworkModule : public CoreClockedModule {
-	public:
-		NetworkModule();
-		~NetworkModule();
+    public:
+        NetworkModule();
+        ~NetworkModule();
 
         void getInfo();
         class NetworkInterface {

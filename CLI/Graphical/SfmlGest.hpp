@@ -19,42 +19,6 @@
 #include "../Headers/RamModule.hpp"
 
 class SfmlGest {
-    private:
-        sf::Font _font;
-
-        // ======== HostName Module ! ========
-        sf::Text _hostName;
-        sf::Text _userName;
-        sf::Text _titleHostname;
-        sf::RectangleShape _hostModuleRectangle;
-        //========= Os module ! ==============
-        sf::Text _kernelVersion;
-        sf::Text _osName;
-        sf::Text _titleOs;
-        sf::RectangleShape _osModuleRectangle;
-        // ========== Network Module ! ========
-        sf::Text _rxPackets;
-        sf::Text _txPackets;
-        sf::Text _txbytes;
-        sf::Text _rxbytes;
-        sf::Text _networkNames;
-        sf::Text _titleNetwork;
-        sf::RectangleShape _networkRectangle;
-        // Date and time Module  ============
-        sf::Text _dayMonthYear;
-        sf::Text _Hours;
-        sf::Text _titleDate;
-        sf::RectangleShape _dateTimeRectangle;
-        // RAM  ============
-        sf::Text _maxRam;
-        sf::Text _freeRam;
-        sf::Text _titleRam;
-        sf::RectangleShape _ramRectangle;
-
-        sf::Text _usage;
-
-
-        /* data */
     public:
         bool isDisplayHostname = true;
         bool isDisplayOs = true;
@@ -64,7 +28,7 @@ class SfmlGest {
         void initNetwork();
         void initHostname();
         sf::RenderWindow window;
-        SfmlGest(/* args */);
+        SfmlGest();
         ~SfmlGest() = default;
         sf::Text createText(std::string, unsigned int, sf::Color);
         void display();
@@ -73,6 +37,44 @@ class SfmlGest {
         void display(OsModule &);
         void display(RamModule &);
         void display(NetworkModule &network);
+    
+    private:
+        sf::Font _font;
+
+        /* ======== HostName Module ! ======== */
+        sf::Text _hostName;
+        sf::Text _userName;
+        sf::Text _titleHostname;
+        sf::RectangleShape _hostModuleRectangle;
+
+        /* ========= Os module ! ============= */
+        sf::Text _kernelVersion;
+        sf::Text _osName;
+        sf::Text _titleOs;
+        sf::RectangleShape _osModuleRectangle;
+
+        /* ========= Network Module ! ======== */
+        sf::Text _rxPackets;
+        sf::Text _txPackets;
+        sf::Text _txbytes;
+        sf::Text _rxbytes;
+        sf::Text _networkNames;
+        sf::Text _titleNetwork;
+        sf::RectangleShape _networkRectangle;
+
+        /* ====== Date and time Module  ====== */
+        sf::Text _dayMonthYear;
+        sf::Text _Hours;
+        sf::Text _titleDate;
+        sf::RectangleShape _dateTimeRectangle;
+
+        /* =============== RAM =============== */
+        sf::Text _maxRam;
+        sf::Text _freeRam;
+        sf::Text _titleRam;
+        sf::RectangleShape _ramRectangle;
+
+        sf::Text _usage;
 };
 
 int startGraphics(void);

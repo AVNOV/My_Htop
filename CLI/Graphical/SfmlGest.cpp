@@ -51,10 +51,10 @@ void SfmlGest::initNetwork(void)
     _networkRectangle = rectangleCreation({490, 10}, {200, 150}, 3, sf::Color::White);
 }
 
-SfmlGest::SfmlGest(/* args */)
+SfmlGest::SfmlGest()
 {
-    window.create(sf::VideoMode(800, 600), "My GkRellM");
-    sf::Vector2u windowSize = {1920, 1080}; // Recuperer la taille de l'écran !!!!
+    window.create(sf::VideoMode(800, 600), "B2 SOFTWARE PROJECT 2021");
+    sf::Vector2u windowSize = {1920, 1080}; // get screen size
     window.setPosition({0, 0});
     window.setSize(windowSize);
 
@@ -110,8 +110,6 @@ sf::Text SfmlGest::createText(std::string text, unsigned int size, sf::Color col
     return (newText);
 }
 
-// ===============Display Ram
-
 void SfmlGest::display(RamModule &module)
 {
     if (!isDisplayRam)
@@ -124,10 +122,6 @@ void SfmlGest::display(RamModule &module)
     this->window.draw(_freeRam);
     window.draw(_titleRam);
 }
-// =================== end display ram
-
-
-// ========= Display Hostname
 
 void SfmlGest::display(HostnameModule &module)
 {
@@ -140,10 +134,6 @@ void SfmlGest::display(HostnameModule &module)
     this->window.draw(_userName);
     window.draw(_titleHostname);
 }
-// =================== end display Hostname
-
-
-// ==================== Display Os
 
 void SfmlGest::display(OsModule &module)
 {
@@ -157,10 +147,6 @@ void SfmlGest::display(OsModule &module)
     this->window.draw(_titleOs);
 }
 
-// =================== end display
-
-//=================== Display Date and time
-
 void SfmlGest::display(DateTimeModule &module)
 {
     if (!isDisplayDateTime)
@@ -172,10 +158,6 @@ void SfmlGest::display(DateTimeModule &module)
     this->window.draw(_Hours);
     window.draw(_titleDate);
 }
-
-//end date and time
-
-//==================Display Network
 
 void SfmlGest::display(NetworkModule &network)
 {
@@ -200,8 +182,6 @@ void SfmlGest::display(void)
     window.draw(_usage);
 }
 
-// ================= End display network
-
 void eventHandling(sf::Event event, sf::Window &window, SfmlGest &sfml)
 {
     while (window.pollEvent(event)) {
@@ -221,8 +201,5 @@ void eventHandling(sf::Event event, sf::Window &window, SfmlGest &sfml)
 
         if ((event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::R))
             sfml.isDisplayRam = !sfml.isDisplayRam;
-
-        // if (event.type == sf::Event::MouseButtonReleased)
-
     }
 }

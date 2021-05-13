@@ -20,15 +20,15 @@ CpuModule::CpuModule()
 
 static std::string get_activity_percent(float max, float used)
 {
-    std::stringstream s;
+    std::stringstream strm;
     float temp;
 
     max *= 1000;
     temp = ((used / max) * 100);
     if (temp > 100)
         temp = 100;
-    s << std::fixed << std::setprecision(2) << temp << " %";
-    return (s.str());
+    strm << std::fixed << std::setprecision(2) << temp << " %";
+    return (strm.str());
 }
 
 void CpuModule::getInfo(void)

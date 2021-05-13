@@ -1,6 +1,6 @@
-NAME	= program
+NAME	= htopSender
 
-CC	= g++
+CC	= g++ -g3
 
 RM	= rm -f
 
@@ -20,7 +20,7 @@ SRCS	= ./Graphical/GUI.cpp \
 OBJS	= $(SRCS:.cpp=.o)
 
 override CPPFLAGS 	= -I ./Interface/ -I ./Sources -I ./Headers/
-override CXXFLAGS 	+= -Wall -Wextra #-Werror
+override CXXFLAGS 	+= -Wall -Wextra -Werror
 override LDFLAGS	+= -lsfml-graphics -lsfml-window -lsfml-system -lncurses
 
 

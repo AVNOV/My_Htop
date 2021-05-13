@@ -5,7 +5,7 @@
 */
 
 #ifndef MONITORS_INFO_H_
-    #define MONITORS_INFO_H_
+ #define MONITORS_INFO_H_
 
 #include "CpuModule.hpp"
 #include "DateTimeModule.hpp"

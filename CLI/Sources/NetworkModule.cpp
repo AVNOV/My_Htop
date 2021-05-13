@@ -23,6 +23,7 @@ NetworkModule::NetworkInterface::NetworkInterface(std::string name, int tx, int 
 : _name(name), _tx(tx), _tx_bytes(tx_bytes), _rx(rx), _rx_bytes(rx_bytes)
 {
 }
+
 void NetworkModule::getInfo()
 {
     size_t i = 0;
@@ -34,16 +35,16 @@ void NetworkModule::getInfo()
         if (tmp->ifa_addr == NULL)
             continue;
         else if (tmp->ifa_addr->sa_family == AF_PACKET && tmp->ifa_data != NULL) {
-            i ++;
+            i++;
             struct rtnl_link_stats *stats = static_cast<struct rtnl_link_stats*>(tmp->ifa_data);
-            NetworkInterface netInterface(std::string(tmp->ifa_name), stats->tx_packets, stats->tx_bytes,
-                                          stats->rx_packets, stats->rx_bytes);
+            NetworkInterface netInterface(std::string(tmp->ifa_name),
+                stats->tx_packets, stats->tx_bytes, stats->rx_packets, stats->rx_bytes);
             if (i == 3) {
-            this->name = tmp->ifa_name;
-            this->_rx = stats->rx_packets;
-            this->_tx = stats->tx_packets;
-            this->_rx_bytes = stats->rx_bytes;
-            this->_tx_bytes = stats->tx_bytes;
+                this->name = tmp->ifa_name;
+                this->_rx = stats->rx_packets;
+                this->_tx = stats->tx_packets;
+                this->_rx_bytes = stats->rx_bytes;
+                this->_tx_bytes = stats->tx_bytes;
             }
             this->_network.push_back(netInterface);
         }

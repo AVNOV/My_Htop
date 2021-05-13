@@ -37,39 +37,6 @@ void GUI::setDisplayed(bool display)
     this->_displayed = display;
 }
 
-// void GUI::addWidget(Type::Module type)
-// {
-//      IMonitorModule *module = nullptr;
-
-//     switch (type) {
-//         case Type::Module::HOSTNAME:
-//             module = new HostnameModule;
-//             break;
-//         case Type::Module::OS:
-//             module = new OsModule;
-//             break;
-//         // case Type::Module::DATE:
-//         //     module = new DateTimeModule;
-//         //     break;
-//         case Type::Module::CPU:
-//             module = new CpuModule;
-//             break;
-//         case Type::Module::NETWORK:
-//             module = new NetworkModule;
-//             break;
-//         case Type::Module::RAM:
-//             module = new RamModule;
-//             break;
-//         default:
-//             module = nullptr;
-//             break;
-//     }
-//     if (module != nullptr) {
-//         this->_widgets.push_back(module);
-//         // this->refreshDisplay();
-//     }
-// }
-
 void GUI::removeWidget(Type::Module type)
 {
     (void)type;
